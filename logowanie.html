@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="PL-pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spółdzielnia Mieszkaniowa Lokatorsko - Własnościowa "Drwęca"</title>
+    <link rel="stylesheet" href="styl.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="icon" href="logo.ico" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <img src="logo.png" alt="Logo" id="logo">
+            <div class="header-text">
+                <h2>Spółdzielnia Mieszkaniowa <br> Lokatorsko - Własnościowa</h2>
+                <h1>"Drwęca"</h1>
+            </div>
+        </div>
+    </header>
+    
+    <nav>
+        <ul id="menu">
+            <li><a href="index.html"><i class="material-icons" id="dom">home</i></a></li>
+            <li><a href="aktualnosci.html">Aktualności</a></li>
+    
+            <li class="has-submenu"><a href="#">Organy spółdzielni ▼</a>
+                <ul class="lista">
+                    <li><a href="organy/rada.html">Rada nadzorcza</a></li>
+                    <li><a href="organy/zarzad.html">Zarząd</a></li>
+                </ul>
+            </li>
+    
+            <li class="has-submenu"><a href="fundusze.html">Fundusze Unijne ▼</a>
+                <ul class="lista">
+                    <li><a href="fundusze/ogloszenia.html">Ogłoszenia</a></li>
+                    <li><a href="fundusze/galeria.html">Galeria</a></li>
+                </ul>
+            </li>
+    
+            <li class="has-submenu"><a href="komunikaty.html">Komunikaty ▼</a>
+                <ul class="lista">
+                    <li><a href="komunikaty/przetargi.html">Przetargi</a></li>
+                    <li><a href="komunikaty/dzial_techniczny.html">Dział Techniczny</a></li>
+                </ul>
+            </li>
+    
+            <li><a href="ebok.html">eBok</a></li>
+            <li><a href="logowanie.html">Strefa członków</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+    <h2>Logowanie do strefy członków</h2>
+    <form action="panel_członka.html" method="post" class="login-form">
+        <label for="username">*Nazwa użytkownika:</label>
+        <input type="text" id="username" name="username" required>
+
+        <label for="password">*Hasło:</label>
+        <input type="password" id="password" name="password" required>
+
+        <div class="login-options">
+            <label id="colorix">
+                <input type="checkbox" name="remember" id="remember">
+                Zapamiętaj mnie na tym komputerze
+            </label>
+            
+        </div>
+
+        <button type="submit">Zaloguj się</button>
+        <a href="odzyskiwanie_hasla.html" class="forgot-password">Nie pamiętam hasła</a>
+    </form>
+</main>
+
+
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer-box">
+                <strong>Kontakt</strong><br>
+                <i class="material-icons">home_work</i> ul. Przemysłowa 15 <br>
+                11-130 Orneta <br>
+                <i class="material-icons">mail</i> kontakt@smlwdrweca.pl <br>
+            </div>
+            <div class="footer-box">
+                <strong>Zgłaszanie awarii</strong><br>
+                <i class="material-icons">phone_iphone</i> 662 257 402<br>
+                <i class="material-icons">phone_iphone</i> 575-135-703<br>
+                <i class="material-icons">phone_iphone</i> 519-481-957<br>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
