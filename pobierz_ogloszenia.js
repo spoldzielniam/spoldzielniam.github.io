@@ -1,23 +1,19 @@
-const lista = document.querySelector(".aktualnosci-lista");
-const kategoria = lista.dataset.kategoria;
+const apiUrl = "https://script.google.com/macros/s/AKfycby5t3wjub4H5OEy4y7yJZZFZD3H0139mkGlo_a62zxRzGgAuM13z3QrD5LP-VTssiAk/exec"; // <-- Twój URL
 
-fetch("https://script.google.com/macros/s/AKfycby5t3wjub4H5OEy4y7yJZZFZD3H0139mkGlo_a62zxRzGgAuM13z3QrD5LP-VTssiAk/exec")
+fetch(apiUrl)
   .then(res => res.json())
   .then(data => {
-    lista.innerHTML = "";
-    data.reverse().forEach(item => {
-      if (item.kategoria === kategoria) {
-        const el = document.createElement("li");
-        let obraz = item.zdjecie ? `<img src="${item.zdjecie}" style="max-width:100%;">` : "";
-        el.innerHTML = `
-          <article>
-            <h3>${item.tytul}</h3>
-            <p>${item.tresc}</p>
-            ${obraz}
-            <small>Dodano: ${new Date(item.data).toLocaleString()}</small>
-          </article>
-        `;
-        lista.appendChild(el);
+    const kontener = document.querySelector(".aktualnosci-lista");
+    const kategoriaStrony = kontener?.dataset.kategoria;
+
+    data.forEach(wiersz => {
+      if (wiersz.kategoria === kategoriaStrony) {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>${wiersz.tytul}</strong><br><p>${wiersz.tresc}</p>`;
+        kontener.appendChild(li);
       }
     });
+  })
+  .catch(err => {
+    console.error("Błąd podczas pobierania danych:", err);
   });
