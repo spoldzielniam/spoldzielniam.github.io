@@ -76,5 +76,21 @@
         </div>
     </footer>
 </body>
-<script src="pobierz_ogloszenia.js"></script>
+
+
+<script>
+  function callback(data) {
+    const kontener = document.querySelector(".aktualnosci-lista");
+    const kategoriaStrony = kontener.dataset.kategoria;
+
+    data.forEach(item => {
+      if (item.kategoria === kategoriaStrony) {
+        const li = document.createElement("li");
+        li.innerHTML = `<strong>${item.tytul}</strong><br><p>${item.tresc}</p><small>${new Date(item.data).toLocaleDateString()}</small>`;
+        kontener.appendChild(li);
+      }
+    });
+  }
+</script>
+<script src="https://script.google.com/macros/s/AKfycbyNQMXERsXVImHLxmJucTeQnk9plwxcIkHR5Un3taagPuc_6gspOOeDu7UYtqYlC3Q/exec?callback=callback"></script>
 </html>
